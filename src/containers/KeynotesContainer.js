@@ -1,15 +1,33 @@
 import React, { Component } from 'react'
-import NewKeynote from '../components/NewKeynote'
+import { BrowserRouter as Route, Switch } from 'react-router-dom'
 import Keynotes from '../components/Keynotes'
+import NewKeynote from '../components/NewKeynote'
 import KeynoteDetails from '../components/KeynoteDetails'
+import { connect } from 'react-redux'
 
 class KeynotesContainer extends Component {
   render() {
-    console.log(this.props)
+    const { keynotes } = this.props
     return (
-      <Keynotes />
+      <Switch>
+        <Route exact path="/keynotes">
+          <Keynotes keynotes={keynotes}/>
+        </Route>
+        <Route exact path="/keynotes/new">
+          <NewKeynote />
+        </Route>
+        <Route exact path="/keynotes/:id">
+          <KeynoteDetails />
+        </Route>
+      </Switch>
     )
   }
 }
 
-export default KeynotesContainer
+const mapStateToProps = (state) => {
+  return {
+    keynotes: state.keynotes
+  }
+}
+
+export default connect(mapStateToProps)(KeynotesContainer)

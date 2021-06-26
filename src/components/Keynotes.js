@@ -1,31 +1,18 @@
 
-const Keynotes = () => {
-  
-  // const renderKeynotes = () => {
-
-  // }
-
+const Keynotes = ({ keynotes }) => {
+  // console.log(keynotes)
+  const renderKeynotes = keynotes.map(keynote => (
+    <div className="card" key={keynote.id}>
+      <div className="card-body">
+      <h3 className="card-title">Topic: {keynote.title }</h3>
+      <p className="card-text">Presenter: {keynote.speaker}</p>
+      <p className="card-text">Time: {keynote.date_time} </p>
+      </div>
+    </div>
+  ))
   return (
     <div>
-      <h1>Schedule</h1>
-      <hr />
-      <div>
-        <h4>Keynote Title</h4>
-        <p>Presented by Person</p>
-        <p>Time and Date</p>
-      </div>
-      <hr />
-      <div>
-        <h4>Keynote Title</h4>
-        <p>Presented by Person</p>
-        <p>Time and Date</p>
-      </div>
-      <hr />
-      <div>
-        <h4>Keynote Title</h4>
-        <p>Presented by Person</p>
-        <p>Time and Date</p>
-      </div>
+      { renderKeynotes }
     </div>
   )
 }

@@ -1,8 +1,7 @@
 
-const KeynoteDetails = (props) => {
-  const id = props.match.params.id
+const KeynoteDetails = () => {
   return (
-    <h1>Keynote Details - { id }</h1>
+    <h1>Keynote Details</h1>
   )
 }
 

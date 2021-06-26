@@ -18,7 +18,6 @@ class KeynoteDetails extends Component {
         <p>Date and time: { keynote.date_time } </p>
         <p>Presented by: { keynote.speaker }</p>
         <p>Description: { keynote.description }</p>
-        <p>{ keynote.speaker }</p>
         <hr />
         <button onClick={this.handleClick} className="btn btn-primary">Delete Keynote</button>
       </div>

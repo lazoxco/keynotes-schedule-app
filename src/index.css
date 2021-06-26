@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+h1 {
+  margin: 20px 0;
+}
+
 .intro {
   margin: 8% auto;
 }

@@ -31,7 +31,7 @@ class NewKeynote extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         
         <form onSubmit={this.handleSubmit} className="keynote-form">
         <h1>Create a Keynote</h1>

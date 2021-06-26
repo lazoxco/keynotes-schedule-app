@@ -13,7 +13,7 @@ class KeynoteDetails extends Component {
   render() {
     const { keynote } = this.props
     return (
-      <div>
+      <div className="container">
         <h1>{ keynote.title }</h1>
         <p>Date and time: { keynote.date_time } </p>
         <p>Presented by: { keynote.speaker }</p>

@@ -13,7 +13,9 @@ class KeynotesContainer extends Component {
     const { keynotes } = this.props
 
     return (
-      <Keynotes keynotes={keynotes} />
+      <div className="container">
+        <Keynotes keynotes={keynotes} />
+      </div>
     )
   }
 }

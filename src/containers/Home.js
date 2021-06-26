@@ -19,7 +19,7 @@ class Home extends Component {
             </div>
             <div className="row">
               <div className="col">
-                <h2>Schedule</h2>
+                <h1 className="text-center">Schedule</h1>
                 <KeynotesContainer />
               </div>
             </div>

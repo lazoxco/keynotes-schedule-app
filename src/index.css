@@ -14,4 +14,15 @@ code {
 
 .app-body {
   padding: 5% 2%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.input-group {
+  margin: 20px 0;
+}
+
+.keynote-form {
+  max-width: 600px;
+  margin: 0 auto;
 }

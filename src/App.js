@@ -1,15 +1,25 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Home from './containers/Home'
+import Keynotes from './containers/Keynotes'
+import NewKeynote from './containers/NewKeynote'
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
-          <Switch>
-            <Navbar />
-          </Switch>
+          <Navbar />
+          
+          <div className="app-body container">
+            <Switch>  
+              <Route exact path='/' component={Home} />
+              <Route exact path='/keynotes' component={Keynotes} />
+              <Route path='/keynotes/new' component={NewKeynote} />
+            </Switch>
+          </div>
+
         </div>
       </Router>
     )

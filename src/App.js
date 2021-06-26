@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './containers/Home'
-import Keynotes from './containers/Keynotes'
-import NewKeynote from './containers/NewKeynote'
+import Keynotes from './components/Keynotes'
+import NewKeynote from './components/NewKeynote'
 
 class App extends Component {
   render() {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Keynotes from '../components/Keynotes'
 
 class Home extends Component {
   render() {

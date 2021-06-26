@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import NewKeynote from './NewKeynote'
-import Keynotes from './Keynotes'
+import NewKeynote from '../components/NewKeynote'
+import Keynotes from '../components/Keynotes'
 
 class KeynotesContainer extends Component {
   render() {

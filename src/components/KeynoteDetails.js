@@ -1,8 +1,26 @@
+import React from 'react'
+import { connect } from 'react-redux'
 
-const KeynoteDetails = () => {
+const KeynoteDetails = (props) => {
+  const id = props.match.params.id
+  const { keynote } = props
   return (
-    <h1>Keynote Details</h1>
+    <div>
+      <h1>{ keynote.title }</h1>
+      <p>Date and time: { keynote.date_time } </p>
+      <p>Presented by: { keynote.speaker }</p>
+      <p>Description: { keynote.description }</p>
+      <p>{ keynote.speaker }</p>
+    </div>
   )
 }
 
-export default KeynoteDetails
+const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.match.params.id
+  const keynote = state.keynotes.find(keynote => keynote.id == id)
+  return {
+    keynote: keynote
+  }
+}
+
+export default connect(mapStateToProps)(KeynoteDetails)

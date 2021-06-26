@@ -14,7 +14,7 @@ const Keynotes = ({ keynotes }) => {
   ))
   return (
     <div>
-      { keynotes && renderKeynotes }
+      { renderKeynotes }
     </div>
   )
 }

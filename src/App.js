@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './containers/Home'
-import Keynotes from './components/Keynotes'
-import NewKeynote from './components/NewKeynote'
+import KeynotesContainer from './containers/KeynotesContainer'
 
 class App extends Component {
   render() {
@@ -14,9 +13,8 @@ class App extends Component {
           
           <div className="app-body container">
             <Switch>  
-              <Route exact path='/' component={Home} />
-              <Route exact path='/keynotes' component={Keynotes} />
-              <Route path='/keynotes/new' component={NewKeynote} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/keynotes" component={KeynotesContainer} />
             </Switch>
           </div>
 

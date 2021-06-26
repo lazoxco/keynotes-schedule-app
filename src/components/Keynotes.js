@@ -1,9 +1,9 @@
 
 const Keynotes = () => {
   
-  const renderKeynotes = () => {
+  // const renderKeynotes = () => {
 
-  }
+  // }
 
   return (
     <div>

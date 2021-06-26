@@ -17,7 +17,9 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/keynotes" component={KeynotesContainer} />
               <Route exact path="/keynotes/new" component={NewKeynote} />
-              <Route exact path="/keynotes/:id" component={KeynoteDetails} />     
+              <Route exact path="/keynotes/:id" component={KeynoteDetails} />
+              <Route path="*" render={() => <h1>404 | Page Not Found</h1>} />    
+
             </Switch>
           </div>
         </div>

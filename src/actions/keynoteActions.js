@@ -4,6 +4,8 @@ export const setKeynotes = (keynotes) => ({type: 'KEYNOTES_RECEIVED', payload: k
 
 export const addKeynote = (keynote) => ({type: "ADDED_KEYNOTE", payload: keynote})
 
+export const deletedKeynote = (id) => ({type: "DELETED_KEYNOTE", payload: id})
+
 export const fetchKeynotes = () => {
   return (dispatch) => {
     fetch(url)
@@ -31,5 +33,24 @@ export const createKeynote = (keynote) => {
       const newKeynote = data
       dispatch(addKeynote(newKeynote))
     })
+  }
+}
+
+export const deleteKeynote = (id) => {
+  return(dispatch) => {
+    const configObj = {
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json",
+        "Accepts": "application/json"
+      }
+    }
+    fetch(`${url}/${id}`, configObj)
+    .then(resp => resp.json())
+    .then(data => {
+      console.log(data)
+      dispatch(deletedKeynote(id))
+    })
+    
   }
 }

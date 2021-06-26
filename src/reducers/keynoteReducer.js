@@ -26,10 +26,11 @@ const keynoteReducer = (state = {keynotes: initState}, action) => {
   switch(action.type) {
     case 'KEYNOTES_RECEIVED':
       return {...state, keynotes: action.payload}
-    // case 'ADD_KEYNOTE':
-    //   return {...state.keynotes, keynotes: [action.payload]}
     case 'ADDED_KEYNOTE':
       return {...state, keynotes: [...state.keynotes, action.payload]}
+    case 'DELETE_KEYNOTE':
+      const newKeynotes = state.keynotes.filter((keynote) => keynote.id !== action.payload )
+      return{ ...state, keynotes: newKeynotes }
     default:
       return state
   }

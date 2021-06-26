@@ -25,6 +25,7 @@ class NewKeynote extends Component {
       description: '',
       date_time: '',
     })
+    this.props.history.push('/keynotes')
   }
 
 
@@ -59,10 +60,16 @@ class NewKeynote extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    keynotes: state.keynotes
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     createKeynote: (keynote) => dispatch(createKeynote(keynote))
   }
 }
 
-export default connect(null, mapDispatchToProps)(NewKeynote)
+export default connect(mapStateToProps, mapDispatchToProps)(NewKeynote)

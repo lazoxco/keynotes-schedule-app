@@ -12,16 +12,13 @@ class App extends Component {
       <Router>
         <div className="App">
           <Navbar />
-          <div className="app-body container">
             <Switch>  
               <Route exact path="/" component={Home} />
               <Route exact path="/keynotes" component={KeynotesContainer} />
               <Route exact path="/keynotes/new" component={NewKeynote} />
               <Route exact path="/keynotes/:id" component={KeynoteDetails} />
               <Route path="*" render={() => <h1>404 | Page Not Found</h1>} />    
-
             </Switch>
-          </div>
         </div>
       </Router>
     )

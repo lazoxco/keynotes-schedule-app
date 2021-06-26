@@ -12,6 +12,18 @@ code {
     monospace;
 }
 
+.intro {
+  margin: 8% auto;
+}
+
+.hero-image {
+  color: #F9F9F9;
+  background-color: lightskyblue;
+  padding: 10% 2%;
+  background-image: url("./luca-bravo-TaCk3NspYe0-unsplash.jpg");
+  background-position: bottom;
+}
+
 .app-body {
   padding: 5% 2%;
   width: 80%;

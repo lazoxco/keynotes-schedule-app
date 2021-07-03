@@ -34,7 +34,6 @@ const keynoteReducer = (state = {keynotes: initState}, action) => {
     default:
       return state
   }
-  
 }
 
 export default keynoteReducer

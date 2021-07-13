@@ -1,12 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Keynotes = ({ keynotes, term }) => {
-  const filteredKeynotes = (keynotes, term) => {
-    const filtered = keynotes.filter((keynote) => {
-      return keynote.title.toLowerCase() === term.toLowerCase();
-    });
-  };
-
+const Keynotes = ({ keynotes }) => {
   const renderKeynotes = keynotes.map((keynote) => (
     <div className="card" key={keynote.id}>
       <div className="card-body">

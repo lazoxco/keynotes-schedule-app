@@ -8,21 +8,18 @@ class KeynotesContainer extends Component {
   state = {
     term: '',
   };
+
   componentDidMount() {
     this.props.fetchKeynotes();
   }
 
-  getTerm = (term) => {
-    this.setState({ term: term });
-  };
-
   render() {
     const { keynotes } = this.props;
-    console.log(this.state);
+
     return (
       <div className="container">
-        <Search getTerm={this.getTerm} />
-        <Keynotes keynotes={keynotes} />
+        <Search handleChange={(e) => this.setState({ term: e.target.value })} />
+        <Keynotes keynotes={keynotes} term={this.state.term} />
       </div>
     );
   }

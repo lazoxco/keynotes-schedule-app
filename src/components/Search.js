@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function Search({ getTerm }) {
+export default function Search(props) {
   return (
     <form>
       <input
-        type="text"
+        type="search"
         placeholder="Search..."
-        onChange={(e) => getTerm(e.target.value)}
+        onChange={props.handleChange}
       />
     </form>
   );

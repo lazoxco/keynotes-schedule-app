@@ -2,13 +2,9 @@ import { Link } from 'react-router-dom';
 
 const Keynotes = ({ keynotes, term }) => {
   const filteredKeynotes = (keynotes, term) => {
-    if (!term) {
-      return keynotes;
-    } else {
-      return keynotes.filter(
-        (keynote) => keynote.title.toLowerCase() === term.toLowerCase()
-      );
-    }
+    const filtered = keynotes.filter((keynote) => {
+      return keynote.title.toLowerCase() === term.toLowerCase();
+    });
   };
 
   const renderKeynotes = keynotes.map((keynote) => (

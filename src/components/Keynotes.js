@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Search from '../components/Search';
 
 const Keynotes = ({ keynotes }) => {
   const renderKeynotes = keynotes.map((keynote) => (
@@ -14,12 +13,7 @@ const Keynotes = ({ keynotes }) => {
       </div>
     </div>
   ));
-  return (
-    <div>
-      <Search />
-      {renderKeynotes}
-    </div>
-  );
+  return <div>{renderKeynotes}</div>;
 };
 
 export default Keynotes;

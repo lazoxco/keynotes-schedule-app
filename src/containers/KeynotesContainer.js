@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
 import Keynotes from '../components/Keynotes';
-import Search from '../components/Search';
-
 import { connect } from 'react-redux';
 import { fetchKeynotes } from '../actions/keynoteActions';
+import Search from '../components/Search';
 
 class KeynotesContainer extends Component {
+  state = {
+    term: '',
+  };
   componentDidMount() {
     this.props.fetchKeynotes();
   }
 
+  getTerm = (term) => {
+    this.setState({ term: term });
+  };
+
   render() {
     const { keynotes } = this.props;
-
+    console.log(this.state);
     return (
       <div className="container">
-        <Search />
+        <Search getTerm={this.getTerm} />
         <Keynotes keynotes={keynotes} />
       </div>
     );

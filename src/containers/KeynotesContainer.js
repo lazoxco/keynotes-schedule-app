@@ -2,13 +2,8 @@ import React, { Component } from 'react';
 import Keynotes from '../components/Keynotes';
 import { connect } from 'react-redux';
 import { fetchKeynotes } from '../actions/keynoteActions';
-import Search from '../components/Search';
 
 class KeynotesContainer extends Component {
-  state = {
-    term: '',
-  };
-
   componentDidMount() {
     this.props.fetchKeynotes();
   }
@@ -18,7 +13,6 @@ class KeynotesContainer extends Component {
 
     return (
       <div className="container">
-        <Search handleChange={(e) => this.setState({ term: e.target.value })} />
         <Keynotes keynotes={keynotes} term={this.state.term} />
       </div>
     );

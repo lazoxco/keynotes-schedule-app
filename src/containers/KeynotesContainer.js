@@ -1,35 +1,37 @@
-import React, { Component } from 'react'
-import Keynotes from '../components/Keynotes'
+import React, { Component } from 'react';
+import Keynotes from '../components/Keynotes';
+import Search from '../components/Search';
 
-import { connect } from 'react-redux'
-import { fetchKeynotes } from '../actions/keynoteActions'
+import { connect } from 'react-redux';
+import { fetchKeynotes } from '../actions/keynoteActions';
 
 class KeynotesContainer extends Component {
   componentDidMount() {
-    this.props.fetchKeynotes()
+    this.props.fetchKeynotes();
   }
 
   render() {
-    const { keynotes } = this.props
+    const { keynotes } = this.props;
 
     return (
       <div className="container">
+        <Search />
         <Keynotes keynotes={keynotes} />
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    keynotes: state.keynotes
-  }
-}
+    keynotes: state.keynotes,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchKeynotes: () => dispatch(fetchKeynotes())
-  }
-}
+    fetchKeynotes: () => dispatch(fetchKeynotes()),
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(KeynotesContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(KeynotesContainer);

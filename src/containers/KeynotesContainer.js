@@ -13,7 +13,7 @@ class KeynotesContainer extends Component {
 
     return (
       <div className="container">
-        <Keynotes keynotes={keynotes} term={this.state.term} />
+        <Keynotes keynotes={keynotes} />
       </div>
     );
   }

@@ -4,7 +4,6 @@ const Keynotes = ({ keynotes, term }) => {
   const filterKeynotes = keynotes.filter((keynote) => {
     return keynote.title.toLowerCase().includes(term.toLowerCase());
   });
-  // console.log(filterKeynotes);
 
   const renderKeynotes = filterKeynotes.map((keynote) => (
     <div className="card" key={keynote.id}>

@@ -18,14 +18,6 @@ class KeynotesContainer extends Component {
     });
   };
 
-  // filterKeynotes = () => {
-  //   this.state.keynotes.filter((keynote) => {
-  //     return keynote.title
-  //       .toLowerCase()
-  //       .includes(this.state.term.toLowerCase());
-  //   });
-  // };
-
   render() {
     const { keynotes } = this.props;
 

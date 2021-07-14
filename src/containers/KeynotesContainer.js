@@ -26,7 +26,7 @@ class KeynotesContainer extends Component {
         <input
           className="search-field"
           type="text"
-          placeholder="Search..."
+          placeholder="Search Topics..."
           onChange={this.handleChange}
         />
         <Keynotes keynotes={keynotes} term={this.state.term} />

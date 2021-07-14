@@ -1,19 +1,42 @@
 import React, { Component } from 'react';
 import Keynotes from '../components/Keynotes';
 import { connect } from 'react-redux';
-import { fetchKeynotes } from '../actions/keynoteActions';
+import { fetchKeynotes, search } from '../actions/keynoteActions';
 
 class KeynotesContainer extends Component {
+  state = {
+    term: '',
+  };
+
   componentDidMount() {
     this.props.fetchKeynotes();
   }
+
+  handleChange = (e) => {
+    this.setState({
+      term: e.target.value,
+    });
+  };
+
+  // filterKeynotes = () => {
+  //   this.state.keynotes.filter((keynote) => {
+  //     return keynote.title
+  //       .toLowerCase()
+  //       .includes(this.state.term.toLowerCase());
+  //   });
+  // };
 
   render() {
     const { keynotes } = this.props;
 
     return (
       <div className="container">
-        <Keynotes keynotes={keynotes} />
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={this.handleChange}
+        />
+        <Keynotes keynotes={keynotes} term={this.state.term} />
       </div>
     );
   }
@@ -28,6 +51,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchKeynotes: () => dispatch(fetchKeynotes()),
+    search: () => dispatch(search()),
   };
 };
 

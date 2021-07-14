@@ -1,56 +1,76 @@
-const url = 'http://localhost:8000/keynotes/'
-    
-export const setKeynotes = (keynotes) => ({type: 'KEYNOTES_RECEIVED', payload: keynotes })
+const url = 'http://localhost:8000/keynotes/';
 
-export const addKeynote = (keynote) => ({type: "ADDED_KEYNOTE", payload: keynote})
+export const setKeynotes = (keynotes) => ({
+  type: 'KEYNOTES_RECEIVED',
+  payload: keynotes,
+});
 
-export const deletedKeynote = (id) => ({type: "DELETED_KEYNOTE", payload: id})
+export const addKeynote = (keynote) => ({
+  type: 'ADDED_KEYNOTE',
+  payload: keynote,
+});
+
+export const deletedKeynote = (id) => ({
+  type: 'DELETED_KEYNOTE',
+  payload: id,
+});
+
+export const searchKeynotes = (term) => ({
+  type: 'SEARCHED_KEYNOTES',
+  payload: term,
+});
 
 export const fetchKeynotes = () => {
   return (dispatch) => {
     fetch(url)
-    .then(resp => resp.json())
-    .then(data => {
-      dispatch(setKeynotes(data))
-    })
-  }
-}
+      .then((resp) => resp.json())
+      .then((data) => {
+        dispatch(setKeynotes(data));
+      });
+  };
+};
 
 export const createKeynote = (keynote) => {
   return (dispatch) => {
     const configObj = {
       method: 'POST',
       headers: {
-        "Content-Type": "application/json",
-        "Accepts": "application/json"
+        'Content-Type': 'application/json',
+        Accepts: 'application/json',
       },
-      body: JSON.stringify(keynote)
-    }
+      body: JSON.stringify(keynote),
+    };
 
     fetch(url, configObj)
-    .then(resp => resp.json())
-    .then(data => {
-      const newKeynote = data
-      dispatch(addKeynote(newKeynote))
-    })
-  }
-}
+      .then((resp) => resp.json())
+      .then((data) => {
+        const newKeynote = data;
+        dispatch(addKeynote(newKeynote));
+      });
+  };
+};
 
 export const deleteKeynote = (id) => {
-  return(dispatch) => {
+  return (dispatch) => {
     const configObj = {
       method: 'DELETE',
       headers: {
-        "Content-Type": "application/json",
-        "Accepts": "application/json"
-      }
-    }
+        'Content-Type': 'application/json',
+        Accepts: 'application/json',
+      },
+    };
     fetch(`${url}/${id}`, configObj)
-    .then(resp => resp.json())
-    .then(data => {
-      console.log(data)
-      dispatch(deletedKeynote(id))
-    })
-    
-  }
-}
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+        dispatch(deletedKeynote(id));
+      });
+  };
+};
+
+export const search = (term) => {
+  console.log(term);
+  return (dispatch) => {
+    dispatch(searchKeynotes(term));
+  };
+};

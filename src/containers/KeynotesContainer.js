@@ -24,6 +24,7 @@ class KeynotesContainer extends Component {
     return (
       <div className="container">
         <input
+          className="search-field"
           type="text"
           placeholder="Search..."
           onChange={this.handleChange}

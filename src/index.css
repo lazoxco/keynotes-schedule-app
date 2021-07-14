@@ -21,10 +21,10 @@ h1 {
 }
 
 .hero-image {
-  color: #F9F9F9;
+  color: #f9f9f9;
   background-color: lightskyblue;
   padding: 10% 2%;
-  background-image: url("./luca-bravo-TaCk3NspYe0-unsplash.jpg");
+  background-image: url('./luca-bravo-TaCk3NspYe0-unsplash.jpg');
   background-position: bottom;
 }
 
@@ -45,4 +45,8 @@ h1 {
 
 .card {
   margin: 25px 0;
+}
+
+.search-field {
+  margin-top: 20px;
 }

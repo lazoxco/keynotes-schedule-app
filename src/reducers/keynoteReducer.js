@@ -33,12 +33,6 @@ const keynoteReducer = (state = { keynotes: initState }, action) => {
         (keynote) => keynote.id !== action.payload
       );
       return { ...state, keynotes: newKeynotes };
-    case 'SEARCHED_KEYNOTES':
-      console.log(action.payload);
-      const filteredKeynotes = state.keynotes.filter((keynote) =>
-        keynote.title.includes(action.payload)
-      );
-      return { ...state, keynotes: filteredKeynotes };
     default:
       return state;
   }

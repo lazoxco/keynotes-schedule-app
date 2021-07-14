@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Keynotes from '../components/Keynotes';
 import { connect } from 'react-redux';
-import { fetchKeynotes, search } from '../actions/keynoteActions';
+import { fetchKeynotes } from '../actions/keynoteActions';
 
 class KeynotesContainer extends Component {
   state = {
@@ -43,7 +43,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchKeynotes: () => dispatch(fetchKeynotes()),
-    search: () => dispatch(search()),
   };
 };
 

@@ -15,11 +15,6 @@ export const deletedKeynote = (id) => ({
   payload: id,
 });
 
-export const searchKeynotes = (term) => ({
-  type: 'SEARCHED_KEYNOTES',
-  payload: term,
-});
-
 export const fetchKeynotes = () => {
   return (dispatch) => {
     fetch(url)
@@ -65,12 +60,5 @@ export const deleteKeynote = (id) => {
         console.log(data);
         dispatch(deletedKeynote(id));
       });
-  };
-};
-
-export const search = (term) => {
-  console.log(term);
-  return (dispatch) => {
-    dispatch(searchKeynotes(term));
   };
 };
